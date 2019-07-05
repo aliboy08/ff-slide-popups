@@ -1,0 +1,122 @@
+/* FF Slide Popup */
+.ff-slide-popup {
+	position: fixed;
+	z-index: 1000;
+	opacity: 0;
+	transition: all .5s ease;
+	padding: 30px;
+	background: #fff;
+}
+.ff-slide-popup.active {
+	opacity: 1;
+	z-index: 999999;
+}
+.ff-slide-popup .close-btn {
+	position: absolute;
+	font-size: 24px;
+	width: auto;
+	height: auto;
+	line-height: 1;
+	background: none;
+	cursor: pointer;
+	color: inherit;
+	z-index: 99999999;
+}
+.ff-slide-popup .close-btn:hover {
+	color: inherit;
+	opacity: .8;
+	background: none;
+}
+
+.ff-slide-popup.slide-right,
+.ff-slide-popup.slide-left {
+	top: 0;
+	background: #fff;
+	height: 100%;
+	width: 600px;
+	padding: 55px 55px 30px;
+}
+.ff-slide-popup.slide-right > .wrapper,
+.ff-slide-popup.slide-left > .wrapper {
+	padding-left: 0;
+	padding-right: 0;
+}
+.ff-slide-popup.slide-left > .inner,
+.ff-slide-popup.slide-right > .inner {
+	width: 370px;
+	position: relative;
+	max-height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.ff-slide-popup.slide-left .close-btn,
+.ff-slide-popup.slide-right .close-btn {
+	position: absolute;
+	left: 490px;
+	top: 30px;
+}
+
+.ff-slide-popup.slide-right {
+	/* right: -600px; */
+	right: 0;
+	transform: translateX(100%);
+	box-shadow: -2px 0px 10px -8px #000;
+}
+.ff-slide-popup.slide-right.active {
+	transform: translateX(0);
+	right: 0;
+}
+
+.ff-slide-popup.slide-left {
+	left: 0;
+	transform: translateX(-100%);
+	box-shadow: 2px 0px 10px -8px #000;
+}
+.ff-slide-popup.slide-left.active {
+	transform: translateX(0);
+	left: 0;
+}
+
+.ff-slide-popup.slide-bottom,
+.ff-slide-popup.slide-top {
+	width: 100%;
+	height: auto;
+	left: 0;
+}
+.ff-slide-popup.slide-bottom .wrapper,
+.ff-slide-popup.slide-top .wrapper {
+	position: relative;
+}
+.ff-slide-popup.slide-bottom .close-btn,
+.ff-slide-popup.slide-top .close-btn {
+	right: -20px;
+	top: 0;
+}
+
+.ff-slide-popup.slide-top {
+	/* top: -100%; */
+	top: 0;
+	transform: translateY(-100%);
+	padding: 40px 0;
+	box-shadow: 0 2px 10px -5px #000;
+}
+.ff-slide-popup.slide-top.active {
+	top: 0;
+	transform: translateY(0);
+}
+.admin-bar .ff-slide-popup.slide-top.active {
+	top: 32px;
+}
+
+.ff-slide-popup.slide-bottom {
+	/* bottom: -100%; */
+	bottom: 0;
+	transform: translateY(100%);
+	padding: 40px 0;
+	box-shadow: 0 -2px 10px -8px #000;
+}
+.ff-slide-popup.slide-bottom.active {
+	bottom: 0;
+	transform: translateY(0);
+	z-index: 99999999;
+}
